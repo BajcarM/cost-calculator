@@ -276,6 +276,9 @@ button:hover {
 
 /* Responzivní styly pro mobilní zařízení */
 @media (max-width: 768px) {
+  .tab-content {
+    padding: 1rem;
+  }
   .tab-button {
     font-size: 14px;
     padding: 12px;
