@@ -10,6 +10,8 @@ import {
   Grid,
 } from '@mui/material'
 import { FormOdpb } from './components/FormOdpb'
+import { PrintPdf } from './components/PrintPdf/PrintPdf'
+import { PDFViewer } from '@react-pdf/renderer'
 
 function App() {
   const [activeTab, setActiveTab] = useState('odpb')
@@ -70,6 +72,18 @@ function App() {
           xs={12}
         >
           {activeTab === 'odpb' && <FormOdpb />}
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+        >
+          <PDFViewer
+            width="100%"
+            height={1200}
+          >
+            <PrintPdf />
+          </PDFViewer>
         </Grid>
       </Grid>
     </Container>

@@ -11,6 +11,9 @@ import {
   Typography,
 } from '@mui/material'
 import { ChangeEvent, useEffect, useState } from 'react'
+import { PrintPdf } from './PrintPdf/PrintPdf'
+import { PDFDownloadLink } from '@react-pdf/renderer'
+import { PrintPdfButton } from './PrintPdf/PrintPdfButton'
 
 export type FormShape = {
   jmeno: string
@@ -572,6 +575,13 @@ export const FormOdpb = () => {
             fullWidth
             margin="normal"
           />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+        >
+          <PrintPdfButton />
         </Grid>
       </Grid>
     </form>

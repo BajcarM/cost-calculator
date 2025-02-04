@@ -1,13 +1,15 @@
+import { BorderColor } from '@mui/icons-material'
+import { outlinedInputClasses } from '@mui/material'
 import { createTheme } from '@mui/material/styles'
 
 // 🎨 Define Global Theme
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2', // Default primary color
+      main: '#FF0000', // Default primary color
     },
     secondary: {
-      main: '#ff5722', // Default secondary color
+      main: '#333333', // Default secondary color
     },
   },
   typography: {
@@ -44,6 +46,24 @@ const theme = createTheme({
           },
         },
       },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        notchedOutline: {
+          borderColor: '#FF0000',
+        },
+        root: {
+          [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
+            borderColor: '#FF0000',
+          },
+          [`&.Mui-focused .${outlinedInputClasses.notchedOutline}`]: {
+            borderColor: '#FF0000',
+          },
+        },
+      },
+    },
+    MuiInputLabel: {
+      defaultProps: {},
     },
     // Default styles for selects
     MuiSelect: {
