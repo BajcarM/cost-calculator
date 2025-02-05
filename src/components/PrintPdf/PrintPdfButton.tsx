@@ -8,6 +8,7 @@ export const PrintPdfButton = () => {
       document={<PrintPdf />}
       fileName="nabidka.pdf"
     >
+      {/* @ts-ignore */}
       {({ loading }) => (
         <Button
           type="button"

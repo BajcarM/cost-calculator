@@ -1,18 +1,12 @@
 import {
-  Button,
-  FormControl,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
-  Stack,
   TextField,
   Typography,
 } from '@mui/material'
-import { ChangeEvent, useEffect, useState } from 'react'
-import { PrintPdf } from './PrintPdf/PrintPdf'
-import { PDFDownloadLink } from '@react-pdf/renderer'
+import { ChangeEvent, useState } from 'react'
 import { PrintPdfButton } from './PrintPdf/PrintPdfButton'
 
 export type FormShape = {

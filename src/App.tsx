@@ -1,33 +1,9 @@
 import { useState } from 'react'
-import {
-  Container,
-  TextField,
-  Button,
-  Typography,
-  Box,
-  Tabs,
-  Tab,
-  Grid,
-} from '@mui/material'
+import { Container, Button, Grid } from '@mui/material'
 import { FormOdpb } from './components/FormOdpb'
-import { PrintPdf } from './components/PrintPdf/PrintPdf'
-import { PDFViewer } from '@react-pdf/renderer'
 
 function App() {
   const [activeTab, setActiveTab] = useState('odpb')
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-  })
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-  }
 
   return (
     <Container maxWidth="md">
