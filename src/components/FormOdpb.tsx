@@ -37,6 +37,7 @@ export type FormShape = {
   kombinacni: number
   deti: number
   obec: number
+  dotaceOblastA: number
   dotaceOblastC: number
   dotaceOblastD: number
   dotace: number
@@ -69,6 +70,7 @@ export const FormOdpb = () => {
     kombinacni: 0,
     deti: 0,
     obec: 0,
+    dotaceOblastA: 0,
     dotaceOblastC: 0,
     dotaceOblastD: 0,
     dotace: 0,
@@ -285,6 +287,19 @@ export const FormOdpb = () => {
             onChange={handleInputChange}
             fullWidth
           />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+        >
+          <Typography
+            variant="body1"
+            fontSize={20}
+            sx={{ mt: 2 }}
+          >
+            Dotace: <strong>{formData.dotaceOblastA.toFixed(2)} CZK</strong>
+          </Typography>
         </Grid>
       </Grid>
 
