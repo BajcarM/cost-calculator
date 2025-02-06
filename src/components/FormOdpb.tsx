@@ -328,8 +328,22 @@ export const FormOdpb = () => {
             value={formData.solary}
             onChange={handleSelectChange}
           >
-            <MenuItem value="true">Ano</MenuItem>
-            <MenuItem value="false">Ne</MenuItem>
+            <MenuItem value="4,5">
+              4,5 kWp (10x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x
+              5,8 kWh Solax)
+            </MenuItem>
+            <MenuItem value="6,3">
+              6,3 (14x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x 5,8
+              kWh Solax)
+            </MenuItem>
+            <MenuItem value="8,1">
+              8,1 (18x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x 5,8
+              kWh Solax)
+            </MenuItem>
+            <MenuItem value="9,9">
+              9,9 (22x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x 5,8
+              kWh Solax)
+            </MenuItem>
           </Select>
         </Grid>
 
@@ -376,8 +390,8 @@ export const FormOdpb = () => {
             value={formData.rekuperaceVzduchu}
             onChange={handleSelectChange}
           >
-            <MenuItem value="true">Ano</MenuItem>
-            <MenuItem value="false">Ne</MenuItem>
+            <MenuItem value="1">Decentralni Vyřešit vlhkost</MenuItem>
+            <MenuItem value="2">Decentráni Vyřešit suchý</MenuItem>
           </Select>
         </Grid>
 
@@ -450,7 +464,7 @@ export const FormOdpb = () => {
             value={formData.nabijeciStanice}
             onChange={handleSelectChange}
           >
-            <MenuItem value="true">Ano</MenuItem>
+            <MenuItem value="true">Wallbox Solax 11 kW</MenuItem>
             <MenuItem value="false">Ne</MenuItem>
           </Select>
         </Grid>
