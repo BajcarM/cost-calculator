@@ -1,8 +1,10 @@
 import {
+  FormControlLabel,
   Grid,
   MenuItem,
   Select,
   SelectChangeEvent,
+  Switch,
   TextField,
   Typography,
 } from '@mui/material'
@@ -17,10 +19,12 @@ export type FormShape = {
   puda: number
   podlaha: number
   sklep: number
+  stena: number
   dvere: number
   okna: number
   stineni: number
   solary: string
+  tigo: boolean
   vytapeni: string
   rekuperaceVody: string
   rekuperaceVzduchu: string
@@ -50,10 +54,12 @@ export const FormOdpb = () => {
     puda: 0,
     podlaha: 0,
     sklep: 0,
+    stena: 0,
     dvere: 0,
     okna: 0,
     stineni: 0,
     solary: 'false',
+    tigo: false,
     vytapeni: 'false',
     rekuperaceVody: 'false',
     rekuperaceVzduchu: 'false',
@@ -96,6 +102,11 @@ export const FormOdpb = () => {
     const { name, value } = e.target
     if (!name) return
     setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSwitchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, checked } = e.target
+    setFormData((prev) => ({ ...prev, [name]: checked }))
   }
 
   return (
@@ -150,15 +161,12 @@ export const FormOdpb = () => {
 
       <Grid
         container
-        columns={{
-          xs: 4,
-          md: 10,
-        }}
         spacing={2}
       >
         <Grid
           item
-          xs={2}
+          xs={12}
+          md={4}
         >
           <TextField
             label="Fasáda"
@@ -172,7 +180,8 @@ export const FormOdpb = () => {
 
         <Grid
           item
-          xs={2}
+          xs={12}
+          md={4}
         >
           <TextField
             label="Střecha"
@@ -186,7 +195,8 @@ export const FormOdpb = () => {
 
         <Grid
           item
-          xs={2}
+          xs={12}
+          md={4}
         >
           <TextField
             label="Půda"
@@ -200,7 +210,8 @@ export const FormOdpb = () => {
 
         <Grid
           item
-          xs={2}
+          xs={12}
+          md={4}
         >
           <TextField
             label="Podlaha"
@@ -214,13 +225,29 @@ export const FormOdpb = () => {
 
         <Grid
           item
-          xs={2}
+          xs={12}
+          md={4}
         >
           <TextField
             label="Sklep"
             name="sklep"
             type="number"
             value={formData.sklep}
+            onChange={handleInputChange}
+            fullWidth
+          />
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          md={4}
+        >
+          <TextField
+            label="Stěna"
+            name="stena"
+            type="number"
+            value={formData.stena}
             onChange={handleInputChange}
             fullWidth
           />
@@ -333,18 +360,35 @@ export const FormOdpb = () => {
               5,8 kWh Solax)
             </MenuItem>
             <MenuItem value="6,3">
-              6,3 (14x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x 5,8
-              kWh Solax)
+              6,3 kwp (14x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x
+              5,8 kWh Solax)
             </MenuItem>
             <MenuItem value="8,1">
-              8,1 (18x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x 5,8
-              kWh Solax)
+              8,1 kwp (18x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x
+              5,8 kWh Solax)
             </MenuItem>
             <MenuItem value="9,9">
-              9,9 (22x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x 5,8
-              kWh Solax)
+              9,9 kwp (22x Longi), střídač (10 kW Solax), baterie 11,6 kWh (2x
+              5,8 kWh Solax)
             </MenuItem>
           </Select>
+        </Grid>
+
+        <Grid
+          item
+          xs={3}
+          md={2}
+        >
+          <FormControlLabel
+            control={
+              <Switch
+                name="tigo"
+                checked={formData.tigo}
+                onChange={handleSwitchChange}
+              />
+            }
+            label="TIGO"
+          />
         </Grid>
 
         <Grid
